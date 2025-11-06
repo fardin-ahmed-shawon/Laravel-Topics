@@ -39,3 +39,9 @@ Route::get('/user-profile/{name}', [UserController::class, 'loadUserProfile']);
 
 // Admin Login Route
 Route::get('/admin/login', [UserController::class, 'adminLogin']);
+
+
+
+/////////// Vendor Area ///////////
+Route::get('vendor-registration', [UserController::class, 'vendorRegistration']);
+Route::get('vendor-login', [UserController::class, 'vendorLogin']);

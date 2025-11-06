@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
@@ -29,5 +30,17 @@ class UserController extends Controller
 
     function adminLogin() {
         return view('admin.login');
+    }
+
+    function vendorRegistration() {
+        return view('vendor.registration');
+    }
+
+    function vendorLogin() {
+        if (View::exists('vendor.login')) {
+            return view('vendor.login');
+        } else {
+            echo "View Not Found";
+        }
     }
 }
