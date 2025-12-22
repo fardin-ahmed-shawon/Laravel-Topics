@@ -25,3 +25,8 @@ Route::redirect('/home', '/');
 Route::get('vendor-registration', [UserController::class, 'vendorRegistration']);
 Route::get('vendor-login', [UserController::class, 'vendorLogin']);
 Route::get('vendor-list', [UserController::class, 'getVendorList']);
+
+/////////// Page ///////////
+Route::get('/page', function () {
+    return view('page');
+});
