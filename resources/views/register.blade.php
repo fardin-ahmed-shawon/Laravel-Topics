@@ -1,4 +1,6 @@
 <x-alert-msg msg="Registration successful!" class="success" />
+<br>
+<x-alert-msg msg="Registration failed!" class="err" />
 
 <h1>Register</h1>
 <style>
