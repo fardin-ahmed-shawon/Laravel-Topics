@@ -30,3 +30,11 @@ Route::get('vendor-list', [UserController::class, 'getVendorList']);
 Route::get('/page', function () {
     return view('page');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
