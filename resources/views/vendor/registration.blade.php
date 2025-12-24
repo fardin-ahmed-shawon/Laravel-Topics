@@ -1,1 +1,0 @@
-<h1>Vendor Registration</h1>
