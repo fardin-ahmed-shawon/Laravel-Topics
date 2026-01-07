@@ -10,5 +10,7 @@ class ProductController extends Controller
         echo "Product Added. <br>";
         echo $data->title . " - ";
         echo $data->price;
+
+        // return $data;
     }
 }
