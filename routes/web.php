@@ -7,12 +7,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/student/dashboard', [StudentController::class, 'student_dashboard']);
-// Route::get('/student/add-student', [StudentController::class, 'addStudent']);
-// Route::get('/student/view-student', [StudentController::class, 'viewStudent']);
 
-Route::prefix('student')->group(function () {
-    Route::get('/dashboard', [StudentController::class, 'student_dashboard']);
-    Route::get('/add-student', [StudentController::class, 'addStudent']);
-    Route::get('/view-student', [StudentController::class, 'viewStudent']);
+// Route grouping with controller
+// Route::controller(StudentController::class)->group(function () {
+//     Route::get('student/dashboard', 'student_dashboard');
+//     Route::get('student/add-student', 'addStudent');
+//     Route::get('student/view-student', 'viewStudent');
+// });
+
+
+// Route grouping with controller & prefix
+Route::controller(StudentController::class)->prefix('student')->group(function () {
+    Route::get('/dashboard', 'student_dashboard');
+    Route::get('/add-student', 'addStudent');
+    Route::get('/view-student/{name}', 'viewStudent');
 });

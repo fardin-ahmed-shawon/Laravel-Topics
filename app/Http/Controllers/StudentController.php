@@ -14,7 +14,7 @@ class StudentController extends Controller
         return "Add Student";
     }
 
-    function viewStudent() {
-        return "View Student";
+    function viewStudent($name) {
+        return "Student Name: " . $name;
     }
 }
