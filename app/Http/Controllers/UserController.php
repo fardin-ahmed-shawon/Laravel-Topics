@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     function getUsers() {
-        return DB::select('select * from users');
+        $user_data = DB::select('select * from users');
+        return view('users', ['users' => $user_data]);
     }
 }
