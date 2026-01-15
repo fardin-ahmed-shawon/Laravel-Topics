@@ -14,11 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         
-        // Append multiple middleware to an existing middleware group
-        $middleware->appendToGroup('check1', [
-            AgeCheck::class,
-            CountryCheck::class,
-        ]);
+        //
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
