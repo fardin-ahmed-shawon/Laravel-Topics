@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\LoginCheck;
+use App\Http\Middleware\RoleCheck;
 
 Route::get('/', function () {
     return view('home');
@@ -16,3 +18,10 @@ Route::middleware(['check1'])->group(function () {
     Route::view('/change-password', 'about')->middleware('check1');
     Route::view('/register', 'about')->middleware('check1');
 });
+
+
+// Single Middleware usage
+//Route::view('/login', 'login')->middleware(LoginCheck::class);
+
+// Multiple Middleware usage
+Route::view('/login', 'login')->middleware([LoginCheck::class, RoleCheck::class]);
